@@ -34,7 +34,7 @@ class crudMethods {
     return await Firestore.instance
         .collection('testcrud')
         .orderBy('carName', descending: false)
-        .getDocuments();
+        .snapshots();
   }
 
   updateData(selectDoc, newValues){
