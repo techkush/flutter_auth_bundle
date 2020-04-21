@@ -18,10 +18,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         home: AuthService().handleAuth(),
-        routes: <String, WidgetBuilder>{
-          '/email_register': (BuildContext context) => new Register(),
-          '/email_login': (BuildContext context) => new LoginPage(),
-        },
     );
   }
 }

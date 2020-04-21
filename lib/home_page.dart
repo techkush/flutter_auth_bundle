@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterauthbundle/auth_service/auth_service.dart';
+import 'package:flutterauthbundle/cloud_firestore/dashboard.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -137,6 +138,29 @@ class _HomePageState extends State<HomePage> {
                     )),
                     onPressed: () {
                       createAlertDialog(context);
+                    }),
+              )),
+          SizedBox(
+            height: 10,
+          ),
+          Padding(
+              padding: EdgeInsets.only(left: 30.0, right: 30.0),
+              child: SizedBox(
+                height: 50,
+                child: RaisedButton(
+                    color: Colors.blue,
+                    child: Center(
+                        child: Text(
+                          'Cloud Firestore',
+                          style: TextStyle(
+                              color: Colors.white, fontWeight: FontWeight.bold),
+                        )),
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Dashboard()),
+                      );
                     }),
               )),
         ],
